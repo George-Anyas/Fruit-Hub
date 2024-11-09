@@ -8,10 +8,12 @@ class OnBoardingPageItem extends StatelessWidget {
       required this.image,
       required this.backGroundImage,
       required this.subtitle,
-      required this.title});
+      required this.title,
+      required this.isVisible});
   final String image, backGroundImage;
   final String subtitle;
   final Widget title;
+  final bool isVisible;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,9 +34,9 @@ class OnBoardingPageItem extends StatelessWidget {
               ),
               Positioned(
                   left: 0, right: 0, bottom: 0, child: SvgPicture.asset(image)),
-              const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text('تخط'),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Visibility(visible: isVisible, child: const Text('تخط')),
               )
             ],
           ),
