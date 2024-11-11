@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_app/constants.dart';
+import 'package:fruit_app/core/services/shared_prefrences.dart';
 import 'package:fruit_app/core/utils/app_text_styles.dart';
 import 'package:fruit_app/features/auth/presentation/views/login_view.dart';
 
@@ -37,11 +39,12 @@ class OnBoardingPageItem extends StatelessWidget {
               Positioned(
                   left: 0, right: 0, bottom: 0, child: SvgPicture.asset(image)),
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: Visibility(
                   visible: isVisible,
                   child: GestureDetector(
                     onTap: () {
+                      Prefs.setBool(kIsBoardingViewSeen, true);
                       Navigator.pushReplacementNamed(
                           context, LoginView.routeName);
                     },
