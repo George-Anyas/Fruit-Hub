@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/core/utils/app_text_styles.dart';
+import 'package:fruit_app/features/auth/presentation/views/login_view.dart';
 
 import 'package:svg_flutter/svg.dart';
 
@@ -39,10 +40,16 @@ class OnBoardingPageItem extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: Visibility(
                   visible: isVisible,
-                  child: Text(
-                    'تخط',
-                    style: TextStyles.regular13.copyWith(
-                      color: const Color(0xFF949D9E),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(
+                          context, LoginView.routeName);
+                    },
+                    child: Text(
+                      'تخط',
+                      style: TextStyles.regular13.copyWith(
+                        color: const Color(0xFF949D9E),
+                      ),
                     ),
                   ),
                 ),

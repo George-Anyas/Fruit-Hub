@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_app/features/auth/presentation/views/login_view.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.onpressed});
@@ -6,7 +7,9 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onpressed,
+      onTap: () {
+        Navigator.of(context).pushReplacementNamed(LoginView.routeName);
+      },
       child: Column(
         children: [
           Container(
