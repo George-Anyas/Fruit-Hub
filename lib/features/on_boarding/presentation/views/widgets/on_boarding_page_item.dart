@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_app/core/utils/app_text_styles.dart';
 
 import 'package:svg_flutter/svg.dart';
 
@@ -36,7 +37,15 @@ class OnBoardingPageItem extends StatelessWidget {
                   left: 0, right: 0, bottom: 0, child: SvgPicture.asset(image)),
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Visibility(visible: isVisible, child: const Text('تخط')),
+                child: Visibility(
+                  visible: isVisible,
+                  child: Text(
+                    'تخط',
+                    style: TextStyles.regular13.copyWith(
+                      color: const Color(0xFF949D9E),
+                    ),
+                  ),
+                ),
               )
             ],
           ),
@@ -49,10 +58,13 @@ class OnBoardingPageItem extends StatelessWidget {
           height: 24,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 37),
           child: Text(
             subtitle,
             textAlign: TextAlign.center,
+            style: TextStyles.semiBold13.copyWith(
+              color: const Color(0xFF4E5556),
+            ),
           ),
         )
       ],
