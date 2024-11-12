@@ -58,7 +58,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
             maintainState: true,
             maintainSize: true,
             visible: currentPage == 1 ? true : false,
-            child: CustomButton(onpressed: () {})),
+            child: CustomButton(text: 'ابدأ الان', onpressed: () {})),
         const SizedBox(height: 43),
       ],
     );

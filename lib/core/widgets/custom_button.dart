@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/constants.dart';
 import 'package:fruit_app/core/services/shared_prefrences.dart';
+import 'package:fruit_app/core/utils/app_text_styles.dart';
 import 'package:fruit_app/features/auth/presentation/views/login_view.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.onpressed});
+  const CustomButton({super.key, required this.onpressed, required this.text});
   final VoidCallback onpressed;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,28 +20,22 @@ class CustomButton extends StatelessWidget {
           Container(
             width: 343,
             height: 54,
-            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 15),
+            padding: EdgeInsets.symmetric(horizontal: 48, vertical: 15),
             decoration: ShapeDecoration(
               color: const Color(0xFF1B5E37),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
             ),
-            child: const Row(
+            child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'ابدأ الان',
+                  text,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontFamily: 'Cairo',
-                    fontWeight: FontWeight.w700,
-                    height: 0,
-                  ),
+                  style: TextStyles.bold16.copyWith(color: Colors.white),
                 ),
               ],
             ),
