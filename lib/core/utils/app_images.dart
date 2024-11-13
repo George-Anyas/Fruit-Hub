@@ -6,14 +6,10 @@ class Assets {
   /// assets/images/app_logo.png
   static const String assetsImagesAppLogo = "assets/images/app_logo.png";
 
-  /// Assets for assetsImagesAppleLogoBlack (1)
-  /// assets/images/Apple_logo_black (1).svg
-  static const String assetsImagesAppleLogoBlack =
+  /// Assets for assetsImagesAppleLogo
+  /// assets/images/Apple_logo.svg
+  static const String assetsImagesAppleLogoicon =
       "assets/images/Apple_logo.svg";
-
-  /// Assets for assetsImagesAppleNewIcon copy
-  /// assets/images/apple_new_icon copy.svg
-  // static const String assetsImagesAppleNewIcon copy = "assets/images/apple_new_icon copy.svg";
 
   /// Assets for assetsImagesFacebookIcon
   /// assets/images/facebook_icon.svg

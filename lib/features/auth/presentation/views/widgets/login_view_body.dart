@@ -81,7 +81,7 @@ class LoginViewBody extends StatelessWidget {
                 height: 16,
               ),
               SocialLoginButton(
-                  image: Assets.assetsImagesAppleLogoBlack,
+                  image: Assets.assetsImagesAppleLogoicon,
                   title: 'تسجيل بواسطة أبل',
                   onpressed: () {}),
               SizedBox(

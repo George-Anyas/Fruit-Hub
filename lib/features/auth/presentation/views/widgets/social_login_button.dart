@@ -37,6 +37,8 @@ class SocialLoginButton extends StatelessWidget {
           ),
           leading: SvgPicture.asset(
             image,
+            width: 24,
+            height: 24,
           ), // Use the passed image variable
         ),
       ),
