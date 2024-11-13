@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:fruit_app/constants.dart';
 import 'package:fruit_app/core/services/shared_prefrences.dart';
 import 'package:fruit_app/core/utils/app_images.dart';
 import 'package:fruit_app/features/auth/presentation/views/login_view.dart';
 import 'package:fruit_app/features/on_boarding/presentation/views/on_boarding_view.dart';
-
-import 'package:svg_flutter/svg.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
