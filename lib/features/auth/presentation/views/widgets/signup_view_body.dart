@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/constants.dart';
 import 'package:fruit_app/core/widgets/custom_text_form_field.dart';
+import 'package:fruit_app/features/auth/presentation/views/widgets/terms_and_condtions.dart';
 
 class SignupViewBody extends StatelessWidget {
   const SignupViewBody({super.key});
@@ -34,6 +35,10 @@ class SignupViewBody extends StatelessWidget {
                 color: Color(0xffC9CECF),
               ),
             ),
+            SizedBox(
+              height: 16,
+            ),
+            TermsAndCondtionswidget()
           ],
         ),
       ),
