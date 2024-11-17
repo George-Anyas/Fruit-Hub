@@ -90,7 +90,7 @@ class LoginViewBody extends StatelessWidget {
               SocialLoginButton(
                   image: Assets.assetsImagesFacebookIcon,
                   title: 'تسجيل بواسطة فيسبوك',
-                  onpressed: () {})
+                  onpressed: () {}),
             ],
           ),
         ),

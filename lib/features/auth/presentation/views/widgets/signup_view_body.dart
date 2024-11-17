@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/constants.dart';
+import 'package:fruit_app/core/widgets/custom_button.dart';
 import 'package:fruit_app/core/widgets/custom_text_form_field.dart';
+import 'package:fruit_app/features/auth/presentation/views/widgets/have_account_already.dart';
 import 'package:fruit_app/features/auth/presentation/views/widgets/terms_and_condtions.dart';
 
 class SignupViewBody extends StatelessWidget {
@@ -10,9 +12,9 @@ class SignupViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+        padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
         child: Column(
-          children: const [
+          children: [
             SizedBox(
               height: 24,
             ),
@@ -38,7 +40,15 @@ class SignupViewBody extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            TermsAndCondtionswidget()
+            TermsAndCondtionswidget(),
+            SizedBox(
+              height: 30,
+            ),
+            CustomButton(onpressed: () {}, text: 'إنشاء حساب جديد'),
+            SizedBox(
+              height: 26,
+            ),
+            HaveAccountAlready(),
           ],
         ),
       ),

@@ -1,18 +1,53 @@
+// Apply plugins first
+plugins {
+    id 'com.android.application' // Apply Android plugin
+    id 'kotlin-android'           // Apply Kotlin plugin
+    id 'dev.flutter.flutter-gradle-plugin' // Flutter plugin
+    id 'com.google.gms.google-services' // Apply Firebase Google services plugin (last)
+}
+
 allprojects {
     repositories {
-        google()
-        mavenCentral()
+        google()       // Required for Android dependencies
+        mavenCentral() // Required for other dependencies
     }
 }
 
-rootProject.buildDir = "../build"
-subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
-    project.evaluationDependsOn(":app")
+android {
+    namespace = "com.example.fruit_app" // Ensure this matches your Firebase app's package name
+    compileSdkVersion 33  // Explicitly set compileSdkVersion to 33 (or another version you prefer)
+
+    defaultConfig {
+        applicationId "com.example.fruit_app"  // This should match your Firebase configuration
+        minSdkVersion 21 // Ensure this meets Firebase's minimum requirements
+        targetSdkVersion 33 // Set targetSdkVersion to the version you're targeting
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("android/app/release.keystore") // Adjust path if necessary
+            storePassword "your-keystore-password"
+            keyAlias "your-key-alias"
+            keyPassword "your-key-password"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release // Use the release signing config here
+        }
+    }
 }
 
-tasks.register("clean", Delete) {
-    delete rootProject.buildDir
+dependencies {
+    // Import the Firebase BoM (Bill of Materials) for automatic versioning of Firebase libraries
+    implementation platform('com.google.firebase:firebase-bom:33.5.1')
+
+    // Firebase Analytics SDK (use with Firebase BoM to avoid version conflicts)
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // Example: Add Firebase Authentication SDK if needed
+    implementation 'com.google.firebase:firebase-auth'
+
+    // Add any other Firebase dependencies you need
 }
