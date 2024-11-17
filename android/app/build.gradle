@@ -39,7 +39,7 @@ android {
 
     defaultConfig {
         applicationId "com.android.application"  // This should match your Firebase project registration
-        minSdkVersion 21  // Minimum supported SDK version
+        minSdkVersion 23  // Minimum supported SDK version
         targetSdkVersion 33  // Target SDK version
     }
 

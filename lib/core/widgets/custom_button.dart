@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_app/constants.dart';
-import 'package:fruit_app/core/services/shared_prefrences.dart';
+
 import 'package:fruit_app/core/utils/app_text_styles.dart';
-import 'package:fruit_app/features/auth/presentation/views/login_view.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.onpressed, required this.text});
@@ -12,8 +10,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Prefs.setBool(kIsBoardingViewSeen, true);
-        Navigator.of(context).pushReplacementNamed(LoginView.routeName);
+        onpressed();
       },
       child: Column(
         children: [

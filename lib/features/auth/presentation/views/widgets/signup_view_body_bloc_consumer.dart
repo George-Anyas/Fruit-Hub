@@ -1,7 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_app/core/helper_functions/build_error_bar.dart';
 import 'package:fruit_app/features/auth/presentation/cubit/signup_cubit/signup_cubit.dart';
 import 'package:fruit_app/features/auth/presentation/views/widgets/signup_view_body.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class SignupViewBodyBlocConsumer extends StatelessWidget {
   const SignupViewBodyBlocConsumer({
@@ -12,10 +15,15 @@ class SignupViewBodyBlocConsumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<SignupCubit, SignupState>(
       listener: (context, state) {
-        // TODO: implement listener
+        if (state is SignupSuccess) {}
+        if (state is SignupFailure) {
+          bildErrorBar(context, state.message);
+        }
       },
       builder: (context, state) {
-        return SignupViewBody();
+        return ModalProgressHUD(
+            inAsyncCall: state is SignupLoading ? true : false,
+            child: SignupViewBody());
       },
     );
   }
