@@ -4,7 +4,7 @@ import 'package:fruit_app/core/services/get_it_service.dart';
 import 'package:fruit_app/core/widgets/custom_appbar.dart';
 import 'package:fruit_app/features/auth/domain/repos/auth_repo.dart';
 import 'package:fruit_app/features/auth/presentation/cubit/signup_cubit/signup_cubit.dart';
-import 'package:fruit_app/features/auth/presentation/views/widgets/signup_view_body.dart';
+import 'package:fruit_app/features/auth/presentation/views/widgets/signup_view_body_bloc_consumer.dart';
 
 class SignupView extends StatelessWidget {
   const SignupView({super.key});
@@ -17,7 +17,7 @@ class SignupView extends StatelessWidget {
       ),
       child: Scaffold(
         appBar: CustomAppBar(title: 'حساب جديد'),
-        body: SignupViewBody(),
+        body: SignupViewBodyBlocConsumer(),
       ),
     );
   }
