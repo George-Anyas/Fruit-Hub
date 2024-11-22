@@ -72,4 +72,38 @@ class AuthRepoImpl extends AuthRepo {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+    try {
+      var user = await firebaseAuthService.signInWithFacebook();
+      return right(UserModel.fromFirebaseUser(user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(e.message));
+    } catch (e) {
+      log('exception in auth repo.create user with email and password ${e.toString()}');
+      return left(
+        ServerFailure(
+          'خطأ غير متوقع لقد حدثت خطأ ما',
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithApple() async {
+    try {
+      var user = await firebaseAuthService.signInWithApple();
+      return right(UserModel.fromFirebaseUser(user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(e.message));
+    } catch (e) {
+      log('exception in auth repo.create user with email and password ${e.toString()}');
+      return left(
+        ServerFailure(
+          'خطأ غير متوقع لقد حدثت خطأ ما',
+        ),
+      );
+    }
+  }
 }
