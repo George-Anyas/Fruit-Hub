@@ -24,7 +24,12 @@ class AuthRepoImpl extends AuthRepo {
     try {
       user = await firebaseAuthService.createUserWithEmailAndPassword(
           email: email, password: password);
-      var userEntity = UserModel.fromFirebaseUser(user);
+      var userEntity = UserEntity(
+        name,
+        email: email,
+        password: password,
+        uid: user.uid,
+      );
       await addUserData(user: userEntity);
       return right(userEntity);
     } on CustomException catch (e) {
@@ -122,7 +127,6 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future addUserData({required UserEntity user}) async {
-    throw CustomException(message: 'somthing wrong happend');
     await dataBaseService.addData(
         path: BackEndEndPoint.addUserData, data: user.toMap());
   }
