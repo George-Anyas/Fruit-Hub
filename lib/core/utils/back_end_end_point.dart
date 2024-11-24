@@ -1,3 +1,4 @@
 class BackEndEndPoint {
-  static const addUserData = 'usere';
+  static const addUserData = 'users';
+  static const getUserData = 'users';
 }
