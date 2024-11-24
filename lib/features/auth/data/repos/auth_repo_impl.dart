@@ -33,14 +33,10 @@ class AuthRepoImpl extends AuthRepo {
       await addUserData(user: userEntity);
       return right(userEntity);
     } on CustomException catch (e) {
-      if (user != null) {
-        await firebaseAuthService.deleteUser();
-      }
+      await DeleteUser(user);
       return left(ServerFailure(e.message));
     } catch (e) {
-      if (user != null) {
-        await firebaseAuthService.deleteUser();
-      }
+      await DeleteUser(user);
       log(
         'exception in auth repo.create user with email and password ${e.toString()}',
       );
@@ -49,6 +45,12 @@ class AuthRepoImpl extends AuthRepo {
           'خطأ غير متوقع لقد حدثت خطأ ما',
         ),
       );
+    }
+  }
+
+  Future<void> DeleteUser(User? user) async {
+    if (user != null) {
+      await firebaseAuthService.deleteUser();
     }
   }
 
@@ -77,10 +79,14 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    User? user;
     try {
-      var user = await firebaseAuthService.signInWithGoogle();
-      return right(UserModel.fromFirebaseUser(user));
+      user = await firebaseAuthService.signInWithGoogle();
+      var userEntity = UserModel.fromFirebaseUser(user);
+      await addUserData(user: userEntity);
+      return right(userEntity);
     } on CustomException catch (e) {
+      await DeleteUser(user);
       return left(ServerFailure(e.message));
     } catch (e) {
       return left(
@@ -93,10 +99,15 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+    User? user;
     try {
-      var user = await firebaseAuthService.signInWithFacebook();
-      return right(UserModel.fromFirebaseUser(user));
+      user = await firebaseAuthService.signInWithFacebook();
+      user = await firebaseAuthService.signInWithGoogle();
+      var userEntity = UserModel.fromFirebaseUser(user);
+      await addUserData(user: userEntity);
+      return right(userEntity);
     } on CustomException catch (e) {
+      await DeleteUser(user);
       return left(ServerFailure(e.message));
     } catch (e) {
       log('exception in auth repo.create user with email and password ${e.toString()}');
@@ -110,12 +121,18 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failure, UserEntity>> signInWithApple() async {
+    User? user;
     try {
-      var user = await firebaseAuthService.signInWithApple();
-      return right(UserModel.fromFirebaseUser(user));
+      user = await firebaseAuthService.signInWithApple();
+
+      var userEntity = UserModel.fromFirebaseUser(user);
+      await addUserData(user: userEntity);
+      return right(userEntity);
     } on CustomException catch (e) {
+      await DeleteUser(user);
       return left(ServerFailure(e.message));
     } catch (e) {
+      await DeleteUser(user);
       log('exception in auth repo.create user with email and password ${e.toString()}');
       return left(
         ServerFailure(
