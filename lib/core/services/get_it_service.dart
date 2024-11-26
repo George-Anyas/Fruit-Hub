@@ -9,9 +9,9 @@ final getIt = GetIt.instance;
 
 void setupGetit() {
   getIt.registerSingleton<FirebaseAuthService>(FirebaseAuthService());
-  getIt.registerSingleton<DataBaseService>(FireStoreService());
+  getIt.registerSingleton<DatabaseService>(FireStoreService());
   getIt.registerSingleton<AuthRepo>(AuthRepoImpl(
     firebaseAuthService: getIt<FirebaseAuthService>(),
-    dataBaseService: getIt<DataBaseService>(),
+    dataBaseService: getIt<DatabaseService>(),
   ));
 }

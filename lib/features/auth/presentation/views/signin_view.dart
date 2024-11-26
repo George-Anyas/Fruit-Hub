@@ -19,7 +19,7 @@ class SigninView extends StatelessWidget {
         appBar: CustomAppBar(
           title: 'تسجيل دخول',
         ),
-        body: SignInBodyBlocConsumer(),
+        body: SigninViewBodyBlocConsumer(),
       ),
     );
   }
