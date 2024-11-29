@@ -32,6 +32,9 @@ class FruitItem extends StatelessWidget {
                   height: 20,
                 ),
                 Image.asset(Assets.assetsImagesWaterMelon),
+                SizedBox(
+                  height: 24,
+                ),
                 ListTile(
                   title: Text(
                     'بطيخ',
