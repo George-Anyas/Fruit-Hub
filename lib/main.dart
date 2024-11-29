@@ -7,7 +7,6 @@ import 'package:fruit_app/core/services/custom_bloc_observer.dart';
 import 'package:fruit_app/core/services/get_it_service.dart';
 import 'package:fruit_app/core/services/shared_prefrences.dart';
 import 'package:fruit_app/features/home/presentaion/views/home_view.dart';
-
 import 'package:fruit_app/firebase_options.dart';
 import 'package:fruit_app/generated/l10n.dart';
 

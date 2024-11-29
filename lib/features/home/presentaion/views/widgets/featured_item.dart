@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
+
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg;
 
 import 'package:fruit_app/core/utils/app_images.dart';
 import 'package:fruit_app/core/utils/app_text_styles.dart';
+
 import 'package:fruit_app/features/home/presentaion/views/widgets/featured_item_botton.dart';
 
 class FeaturedItem extends StatelessWidget {
@@ -25,8 +26,8 @@ class FeaturedItem extends StatelessWidget {
                   top: 0,
                   bottom: 0,
                   left: 0,
-                  right: itemWidth * .4,
-                  child: SvgPicture.asset(Assets.assetsImagesProfileIcon)),
+                  right: itemWidth * .2,
+                  child: Image.asset(Assets.assetsImagesWaterMelon)),
               Container(
                 width: itemWidth / 2,
                 decoration: BoxDecoration(
