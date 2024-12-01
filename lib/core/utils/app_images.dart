@@ -10,6 +10,14 @@ class Assets {
   /// assets/images/Apple_logo.svg
   static const String assetsImagesAppleLogo = "assets/images/Apple_logo.svg";
 
+  /// Assets for assetsImagesCartActive
+  /// assets/images/cart_active.svg
+  static const String assetsImagesCartActive = "assets/images/cart_active.svg";
+
+  /// Assets for assetsImagesCartInActive
+  /// assets/images/cart_inActive.svg
+  static const String assetsImagesCartInActive = "assets/images/cart_inActive.svg";
+
   /// Assets for assetsImagesCheck
   /// assets/images/Check.svg
   static const String assetsImagesCheck = "assets/images/Check.svg";
@@ -34,6 +42,14 @@ class Assets {
   /// assets/images/logo.svg
   static const String assetsImagesLogo = "assets/images/logo.svg";
 
+  /// Assets for assetsImagesMyAccountActive
+  /// assets/images/my_account_active.svg
+  static const String assetsImagesMyAccountActive = "assets/images/my_account_active.svg";
+
+  /// Assets for assetsImagesMyAccountInActive
+  /// assets/images/my_account_inActive.svg
+  static const String assetsImagesMyAccountInActive = "assets/images/my_account_inActive.svg";
+
   /// Assets for assetsImagesNotification
   /// assets/images/notification.svg
   static const String assetsImagesNotification = "assets/images/notification.svg";
@@ -53,6 +69,22 @@ class Assets {
   /// Assets for assetsImagesOnBoardingImage2
   /// assets/images/on_boarding_image2.svg
   static const String assetsImagesOnBoardingImage2 = "assets/images/on_boarding_image2.svg";
+
+  /// Assets for assetsImagesPersonalActive
+  /// assets/images/personal_active.svg
+  static const String assetsImagesPersonalActive = "assets/images/personal_active.svg";
+
+  /// Assets for assetsImagesPersonalInActive
+  /// assets/images/personal_inActive.svg
+  static const String assetsImagesPersonalInActive = "assets/images/personal_inActive.svg";
+
+  /// Assets for assetsImagesProductsActive
+  /// assets/images/products_active.svg
+  static const String assetsImagesProductsActive = "assets/images/products_active.svg";
+
+  /// Assets for assetsImagesProductsInActive
+  /// assets/images/products_inActive.svg
+  static const String assetsImagesProductsInActive = "assets/images/products_inActive.svg";
 
   /// Assets for assetsImagesProfileIcon
   /// assets/images/profile_icon.png

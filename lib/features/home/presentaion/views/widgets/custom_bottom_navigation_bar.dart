@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:fruit_app/core/utils/app_images.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({super.key});
@@ -6,6 +8,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        child: InActiveItem(image: Assets.assetsImagesPersonalActive),
         width: 375,
         height: 70,
         decoration: ShapeDecoration(
@@ -25,5 +28,14 @@ class CustomBottomNavigationBar extends StatelessWidget {
             )
           ],
         ));
+  }
+}
+
+class InActiveItem extends StatelessWidget {
+  const InActiveItem({super.key, required this.image});
+  final String image;
+  @override
+  Widget build(BuildContext context) {
+    return SvgPicture.asset(image);
   }
 }
